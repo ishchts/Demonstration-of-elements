@@ -1,0 +1,167 @@
+@import "_varibles.scss";
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* End of Eric Meyer's CSS Reset */
+
+html {
+	height: 100%;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+	display: block;
+}
+body {
+	font: 12px/18px 'OpenSansRegular',Arial, sans-serif;
+	height: 100%;
+}
+.container-fluid{
+	max-width: 1250px;
+	margin: 0 auto;
+}
+a {
+	text-decoration: none;
+	&:focus,&:hover{
+		text-decoration: none;
+		
+	}
+}
+* {
+	outline: none;
+}
+.wrapper {
+	min-width: 280px;
+	margin: 0 auto;
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+
+}
+/* Header
+-----------------------------------------------------------------------------*/
+.header {
+	min-height: auto;
+	position: relative;
+	background-size: cover;
+	background-repeat: no-repeat;	
+}
+.exampleMenu {
+	padding: 15px;
+	position: relative;
+	&__toggle{
+		font-size: 0;
+		outline: none;
+		display: inline-block;
+		width: 40px;
+		height: 40px;
+		background: #333333;
+	}
+	&__menu {
+		padding: 0;
+		margin: 0;
+		width: 100%;
+		overflow: hidden;
+		justify-content: space-between;
+		flex-direction: column;
+		display: none;
+	}
+	&__item {
+		list-style: none;
+	}
+	&__link {
+		text-align: center;
+		display: block;
+		text-decoration: none;
+		padding-top: 15px;
+		position: relative;
+		padding-left: 20px;
+		letter-spacing: 0.5px;
+		padding-right: 20px;
+		padding-bottom: 17px;
+		background-color: #0091ea;
+		color: #fff;
+		text-transform: uppercase;
+		-webkit-transition: 0.24s all;
+		-o-transition: 0.24s all;
+		-moz-transition: 0.24s all;
+		transition: 0.24s all;
+		text-decoration: none;
+		&:hover {
+			
+		}
+  }
+}
+
+/* Middle
+-----------------------------------------------------------------------------*/
+.content {
+	padding: 0 0 320px;
+}
+
+/* Footer
+-----------------------------------------------------------------------------*/
+.footer {
+	margin: -320px auto 0;
+	min-width: 280px;
+	min-height: 320px;
+	position: relative;
+	background-color: #191919;
+	font-family: "OpenSansRegular";
+	padding-top: 50px;
+}
+@media screen and (min-width: 768px){
+	.exampleMenu{
+		&__toggle{
+			display: none;
+		}
+		&__menu{
+			flex-direction: row;
+			display: flex;
+
+		}
+		&__item{
+			width: 20%;
+		}
+		&__link{
+		}
+	}
+}

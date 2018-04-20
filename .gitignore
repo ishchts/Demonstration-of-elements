@@ -1,0 +1,9 @@
+# Node modules
+node_modules
+
+.htaccess
+robots.txt
+
+.idea
+.vscode
+package-lock.json
