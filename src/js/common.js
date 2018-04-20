@@ -1,0 +1,1 @@
+	  $('#responsive-example-table').cardtable();

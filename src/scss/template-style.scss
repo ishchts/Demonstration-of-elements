@@ -136,6 +136,48 @@ a {
 .content {
 	padding: 0 0 320px;
 }
+.exampleTable {
+	&__menuItem{
+		color: #8193a1;	
+		text-transform: uppercase;
+		font-family: 'PTSansBold';
+		&--relative{
+			position: relative;
+			top: -5px;
+		}
+	}
+	&__contentItem{
+		font-family: "PTSansRegular";
+		font-size: 13px;
+		letter-spacing: -0.3px;
+
+	}
+	@at-root .exampleTableContentItem{
+		&__change{
+			letter-spacing: -0.6px;
+		}
+		&__name{
+			font-size: 16px;
+			display: block;
+			text-decoration: none;
+			color: #44a4ee;
+			letter-spacing: 0;
+			position: relative;
+			top: -2px;
+		}	
+	}
+	@at-root .st-key{
+		text-align: left;
+		font-size: 12px;
+		width: 30%;
+		line-height: 14px;
+
+	}
+	@at-root .st-val {
+		width: 60%;
+		padding-bottom: 18px;
+	}
+}
 
 /* Footer
 -----------------------------------------------------------------------------*/
