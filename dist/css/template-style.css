@@ -1,3 +1,438 @@
+.SumoSelect p {
+  margin: 0;
+}
+
+.SlectBox {
+  width: 200px;
+  padding: 5px 8px;
+}
+
+.SelectClass {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  height: 100%;
+  width: 100%;
+  border: none;
+  z-index: 1;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  -moz-opacity: 0;
+  -khtml-opacity: 0;
+  opacity: 0;
+}
+
+.SumoSelect > .optWrapper > .options > li label,.SumoSelect > .CaptionCont {
+  -ms-user-select: none;
+  user-select: none;
+  -o-user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+}
+
+.SumoSelect {
+  display: inline-block;
+  position: relative;
+  outline: none;
+}
+
+.SumoSelect:focus > .CaptionCont,.SumoSelect:hover > .CaptionCont {
+  border-color: #7799D0;
+}
+
+.SumoSelect > .CaptionCont {
+  position: relative;
+  border: 1px solid #A4A4A4;
+  min-height: 14px;
+  background-color: #fff;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  margin: 0px;
+}
+
+.SumoSelect > .CaptionCont > span {
+  display: block;
+  padding-right: 30px;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  cursor: default;
+}
+
+.SumoSelect > .CaptionCont > label {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  width: 30px;
+}
+
+.SumoSelect > .CaptionCont > label > i {
+  width: 16px;
+  height: 16px;
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  margin: auto;
+  background-repeat: no-repeat;
+  opacity: 1;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 5px 5px 0 5px;
+  border-color: #101010 transparent transparent transparent;
+}
+
+.SumoSelect > .optWrapper {
+  top: 30px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  z-index: -100;
+  background: #fff;
+  overflow: hidden;
+}
+
+.SumoSelect > .optWrapper.open {
+  top: 35px;
+  visibility: visible;
+  opacity: 1;
+  z-index: 1000;
+}
+
+.SumoSelect > .optWrapper > .options {
+  list-style: none;
+  display: block;
+  padding: 0px;
+  margin: 0px;
+  overflow: auto;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  max-height: 250px;
+}
+
+.SumoSelect > .optWrapper.isFloating > .options {
+  max-height: 100%;
+}
+
+.SumoSelect > .optWrapper > .options > li {
+  padding: 6px 6px;
+  border-bottom: 1px solid #F3F3F3;
+  position: relative;
+}
+
+.SumoSelect > .optWrapper > .options > li:first-child {
+  -webkit-border-radius: 2px 2px 0px 0px;
+  -moz-border-radius: 2px 2px 0px 0px;
+  border-radius: 2px 2px 0px 0px;
+}
+
+.SumoSelect > .optWrapper > .options > li:last-child {
+  border-bottom: none;
+  -webkit-border-radius: 0px 0px 2px 2px;
+  -moz-border-radius: 0px 0px 2px 2px;
+  border-radius: 0px 0px 2px 2px;
+}
+
+.SumoSelect > .optWrapper > .options > li:hover {
+  background-color: #E4E4E4;
+}
+
+.SumoSelect > .optWrapper > .options > li.sel {
+  background-color: #a1c0e4;
+}
+
+.SumoSelect > .optWrapper > .options > li label {
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  display: block;
+  cursor: pointer;
+}
+
+.SumoSelect > .optWrapper > .options > li span {
+  display: none;
+}
+
+.SumoSelect > .optWrapper.isFloating {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  width: 90%;
+  bottom: 0px;
+  margin: auto;
+  max-height: 90%;
+}
+
+.SumoSelect > .optWrapper > .options > li.disabled {
+  background-color: inherit;
+  pointer-events: none;
+}
+
+.SumoSelect > .optWrapper > .options > li.disabled * {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=50);
+  -moz-opacity: 0.5;
+  -khtml-opacity: 0.5;
+  opacity: 0.5;
+}
+
+.SumoSelect > .optWrapper.multiple .options {
+  margin-top: 0;
+}
+
+.SumoSelect > .optWrapper.multiple .options > li {
+  padding-left: 35px;
+  cursor: pointer;
+  position: relative;
+}
+
+.SumoSelect > .optWrapper.multiple .options > li span,.SumoSelect .select-all > span {
+  position: absolute;
+  display: block;
+  width: 30px;
+  top: 0px;
+  bottom: 0px;
+  margin-left: -35px;
+}
+
+.SumoSelect > .optWrapper.multiple .options > li span i,.SumoSelect .select-all > span i {
+  position: absolute;
+  margin: auto;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  width: 14px;
+  height: 14px;
+  border: 1px solid #AEAEAE;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  background-color: #fff;
+}
+
+.SumoSelect > .optWrapper > .MultiControls {
+  display: none;
+  border-top: 1px solid #ddd;
+  background-color: #fff;
+}
+
+.SumoSelect > .optWrapper.multiple.isFloating > .MultiControls {
+  display: block;
+  margin-top: 5px;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+}
+
+.SumoSelect .optWrapper.multiple .MultiControls {
+  display: none;
+}
+
+.SumoSelect > .optWrapper.multiple.okCancelInMulti > .MultiControls > p {
+  padding: 6px;
+}
+
+.SumoSelect > .optWrapper.multiple > .MultiControls > p {
+  display: inline-block;
+  cursor: pointer;
+  padding: 12px;
+  width: 50%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.SumoSelect > .optWrapper.multiple > .MultiControls > p:hover {
+  background-color: #f1f1f1;
+}
+
+.SumoSelect > .optWrapper.multiple > .MultiControls > p.btnOk {
+  border-right: 1px solid #DBDBDB;
+  -webkit-border-radius: 0px 0px 0px 3px;
+  -moz-border-radius: 0px 0px 0px 3px;
+  border-radius: 0px 0px 0px 3px;
+}
+
+.SumoSelect > .optWrapper.multiple > .MultiControls > p.btnCancel {
+  -webkit-border-radius: 0px 0px 3px 0px;
+  -moz-border-radius: 0px 0px 3px 0px;
+  border-radius: 0px 0px 3px 0px;
+}
+
+.SumoSelect > .optWrapper.isFloating > .options > li {
+  padding: 12px 6px;
+}
+
+.SumoSelect > .optWrapper.multiple.isFloating > .options > li {
+  padding-left: 35px;
+}
+
+.SumoSelect > .optWrapper.multiple.isFloating {
+  padding-bottom: 43px;
+}
+
+.SumoSelect > .optWrapper.multiple .options > li.selected span i,.SumoSelect .select-all.selected > span i,.SumoSelect .select-all.partial > span i {
+  background-color: #68b42d;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  border-color: transparent;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAGCAYAAAD+Bd/7AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNXG14zYAAABMSURBVAiZfc0xDkAAFIPhd2Kr1WRjcAExuIgzGUTIZ/AkImjSofnbNBAfHvzAHjOKNzhiQ42IDFXCDivaaxAJd0xYshT3QqBxqnxeHvhunpu23xnmAAAAAElFTkSuQmCC");
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.SumoSelect.disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.SumoSelect.disabled > .CaptionCont {
+  border-color: #ccc;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+.SumoSelect .select-all {
+  margin-top: 13px;
+  -webkit-border-radius: 3px 3px 0px 0px;
+  -moz-border-radius: 3px 3px 0px 0px;
+  border-radius: 3px 3px 0px 0px;
+  position: relative;
+  background-color: #fff;
+  padding: 8px 0px 3px 35px;
+  font-size: 12px;
+}
+
+.SumoSelect .select-all > span i {
+  cursor: pointer;
+}
+
+.SumoSelect .select-all.partial > span i {
+  background-color: #ccc;
+}
+
+.SumoSelect > .optWrapper > .options > li.optGroup {
+  padding-left: 5px;
+  text-decoration: underline;
+}/*
+ * CSS Styles that are needed by jScrollPane for it to operate correctly.
+ *
+ * Include this stylesheet in your site or copy and paste the styles below into your stylesheet - jScrollPane
+ * may not operate correctly without them.
+ */.jspContainer {
+  overflow: hidden;
+  position: relative;
+}
+
+.jspPane {
+  position: absolute;
+}
+
+.jspVerticalBar {
+  position: absolute;
+  top: 0;
+  right: 19px;
+  width: 6px;
+  height: 100%;
+}
+
+.jspHorizontalBar {
+  display: none;
+}
+
+.jspCap {
+  display: none;
+}
+
+.jspVerticalBar .jspCap {
+  width: 6px;
+  height: 10px;
+  display: block;
+}
+
+.jspHorizontalBar .jspCap {
+  float: left;
+}
+
+.jspTrack {
+  position: relative;
+}
+
+.jspDrag {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  cursor: pointer;
+  background-color: #fff;
+  width: 6px;
+  height: 6px;
+  max-width: 84px;
+  border: 2px solid #68b42d;
+}
+
+.jspHorizontalBar .jspTrack,.jspHorizontalBar .jspDrag {
+  float: left;
+}
+
+.jspArrow {
+  background: #50506d;
+  text-indent: -20000px;
+  display: block;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+}
+
+.jspArrow.jspDisabled {
+  cursor: default;
+  background: #80808d;
+}
+
+.jspVerticalBar .jspArrow {
+  height: 16px;
+}
+
+.jspHorizontalBar .jspArrow {
+  width: 16px;
+  float: left;
+  height: 100%;
+}
+
+.jspVerticalBar .jspArrow:focus {
+  outline: none;
+}
+
+.jspCorner {
+  background: #eeeef4;
+  float: left;
+  height: 100%;
+}/* Yuk! CSS Hack for IE6 3 pixel bug :( */* html .jspCorner {
+  margin: 0 -3px 0 0;
+}
+
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video {
   margin: 0;
   padding: 0;
@@ -29,7 +464,7 @@ blockquote:before,blockquote:after,q:before,q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
-}/* End of Eric Meyer's CSS Reset */html {height: 100%;}article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary {display: block;}body {font: 12px/18px 'OpenSansRegular',Arial, sans-serif;height: 100%;}.container-fluid {max-width: 1250px;margin: 0 auto;}a {text-decoration: none;}a:focus,a:hover {text-decoration: none;}* {outline: none;}.wrapper {min-width: 280px;margin: 0 auto;min-height: 100%;height: auto !important;height: 100%;}/* Header
------------------------------------------------------------------------------*/.header {min-height: auto;position: relative;-moz-background-size: cover;background-size: cover;background-repeat: no-repeat;}.exampleMenu {padding: 15px;position: relative;}.exampleMenu__toggle {font-size: 0;outline: none;display: inline-block;width: 40px;height: 40px;background: #333333;}.exampleMenu__menu {padding: 0;margin: 0;width: 100%;overflow: hidden;-webkit-box-pack: justify;-webkit-justify-content: space-between;-moz-box-pack: justify;-ms-flex-pack: justify;justify-content: space-between;-webkit-box-orient: vertical;-webkit-box-direction: normal;-webkit-flex-direction: column;-moz-box-orient: vertical;-moz-box-direction: normal;-ms-flex-direction: column;flex-direction: column;display: none;}.exampleMenu__item {list-style: none;}.exampleMenu__link {text-align: center;display: block;text-decoration: none;padding-top: 15px;position: relative;padding-left: 20px;letter-spacing: 0.5px;padding-right: 20px;padding-bottom: 17px;background-color: #0091ea;color: #fff;text-transform: uppercase;-webkit-transition: 0.24s all;-o-transition: 0.24s all;-moz-transition: 0.24s all;transition: 0.24s all;text-decoration: none;}/* Middle
+}/* End of Eric Meyer's CSS Reset */html {height: 100%;}article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary {display: block;}body {font: 12px/18px 'OpenSansRegular',Arial, sans-serif;height: 100%;}.container-fluid {max-width: 1250px;margin: 0 auto;}a {text-decoration: none;}a:focus,a:hover {text-decoration: none;}* {outline: none;}/*SELECT STYLE*/.styled-select {position: absolute;top: 0px;left: 0px;right: 0px;height: 100%;width: 100%;border: none;z-index: 1;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";filter: alpha(opacity=0);-moz-opacity: 0;-khtml-opacity: 0;opacity: 0;}.example__select {margin-bottom: 30px;}.SumoSelect ul li.disabled {display: none;}.SumoSelect {width: 100%;height: 52px;cursor: pointer;max-width: 100%;}.SumoSelect .CaptionCont.SlectBox.clicked {border-color: #069edb;-webkit-border-bottom-right-radius: 0;-moz-border-radius-bottomright: 0;border-bottom-right-radius: 0;-webkit-border-bottom-left-radius: 0;-moz-border-radius-bottomleft: 0;border-bottom-left-radius: 0;}.SumoSelect .CaptionCont.SlectBox.clicked i:after {-webkit-transform: rotate(180deg);-moz-transform: rotate(180deg);-ms-transform: rotate(180deg);-o-transform: rotate(180deg);transform: rotate(180deg);}.SumoSelect:hover .CaptionCont {border-color: #069edb;}.SumoSelect:focus .CaptionCont {border-color: #bfd4eb;}.SumoSelect .CaptionCont {cursor: pointer;border: 1px solid #a7c5d1;width: 100%;max-width: 100%;-webkit-transition: all 0.25s;-o-transition: all 0.25s;-moz-transition: all 0.25s;transition: all 0.25s;font-size: 16px;line-height: 20px;padding-left: 14px;padding-top: 15px;padding-bottom: 15px;padding-right: 33px;}.SumoSelect .CaptionCont .placeholder {color: #9cbcc6;}.SumoSelect .CaptionCont span {cursor: pointer;}.SumoSelect .CaptionCont label {width: 16px;height: 8px;right: 14px;cursor: pointer;}.SumoSelect .CaptionCont label i {border: 0;cursor: pointer;position: relative;width: 100%;height: 100%;}.SumoSelect .CaptionCont label i:after {position: absolute;left: 2px;color: #099fdb;top: 18px;content: "\33";font-family: "icomoon";font-size: 7px;font-style: normal;-webkit-transition: all 0.24s;-o-transition: all 0.24s;-moz-transition: all 0.24s;transition: all 0.24s;}.SumoSelect .optWrapper.open {max-height: 160px;top: 40px;border: 1px solid #dde3e3;}.SumoSelect .optWrapper {-webkit-transition: opacity 0.25s;-o-transition: opacity 0.25s;-moz-transition: opacity 0.25s;transition: opacity 0.25s;}.SumoSelect .optWrapper .options {padding: 0;margin: 0;margin-top: 10px;margin-bottom: 10px;}.SumoSelect .optWrapper .options li {border: 0;padding: 0;-webkit-border-radius: 0;-moz-border-radius: 0;border-radius: 0;list-style: none;margin: 0;}.SumoSelect .optWrapper .options li:before {content: none;}.SumoSelect .optWrapper .options li:after {content: none;}.SumoSelect .optWrapper .options li:hover {background: none;}.SumoSelect .optWrapper .options li label {padding-left: 15px;padding-bottom: 6px;padding-top: 6px;font-size: 14px;display: block;color: #322e2f;padding-right: 30px;line-height: 19px;cursor: pointer;-webkit-transition: color 0.24s;-o-transition: color 0.24s;-moz-transition: color 0.24s;transition: color 0.24s;}.SumoSelect .optWrapper .options li label:hover {color: #0188e5;}.SumoSelect .optWrapper .options li:before {content: none;}.SumoSelect .optWrapper .options li:first-child {-webkit-border-radius: 0;-moz-border-radius: 0;border-radius: 0;}.SumoSelect .optWrapper .options:before {content: '';position: absolute;top: 0;left: 0;right: 0;margin-left: auto;margin-right: auto;width: -webkit-calc(100% - 84px);width: -moz-calc(100% - 84px);width: calc(100% - 84px);height: 1px;background-color: #a7c5d1;}.SumoSelect .optWrapper.open {top: 42px;border: 1px solid #069edb;border-top: 0;-webkit-border-bottom-right-radius: 5px;-moz-border-radius-bottomright: 5px;border-bottom-right-radius: 5px;-webkit-border-bottom-left-radius: 5px;-moz-border-radius-bottomleft: 5px;border-bottom-left-radius: 5px;}.SumoSelect .jspDrag {width: 12px;background-color: #ed1a3b;-webkit-border-radius: 50%;-moz-border-radius: 50%;border-radius: 50%;border: 0;left: -6px;-webkit-transition: all 0.24s;-o-transition: all 0.24s;-moz-transition: all 0.24s;transition: all 0.24s;}.SumoSelect .jspHover {background-color: #ff3050;}.SumoSelect .jspActive {background-color: #ce0020;}.SumoSelect .jspTrack {background-color: #cfe0e7;width: 1px;left: 3px;}.SumoSelect .jspVerticalBar .jspCap {height: 18px;}.wrapper {min-width: 280px;margin: 0 auto;min-height: 100%;height: auto !important;height: 100%;}/* Header
+-----------------------------------------------------------------------------*/.header {min-height: auto;position: relative;-moz-background-size: cover;background-size: cover;background-repeat: no-repeat;}/*  */* {margin: 0;padding: 0;}#nav-icon4 {width: 40px;height: 40px;position: relative;margin: 0;-webkit-transform: rotate(0deg);-moz-transform: rotate(0deg);-o-transform: rotate(0deg);-ms-transform: rotate(0deg);transform: rotate(0deg);-webkit-transition: .5s ease-in-out;-moz-transition: .5s ease-in-out;-o-transition: .5s ease-in-out;transition: .5s ease-in-out;cursor: pointer;}#nav-icon4 span {display: block;position: absolute;height: 5px;width: 100%;background: #fff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;opacity: 1;left: 0;-webkit-transform: rotate(0deg);-moz-transform: rotate(0deg);-o-transform: rotate(0deg);-ms-transform: rotate(0deg);transform: rotate(0deg);-webkit-transition: .25s ease-in-out;-moz-transition: .25s ease-in-out;-o-transition: .25s ease-in-out;transition: .25s ease-in-out;}/* Icon 4 */#nav-icon4 span:nth-child(1) {top: 5px;-webkit-transform-origin: left center;-moz-transform-origin: left center;-o-transform-origin: left center;-ms-transform-origin: left center;transform-origin: left center;}#nav-icon4 span:nth-child(2) {top: 17px;-webkit-transform-origin: left center;-moz-transform-origin: left center;-o-transform-origin: left center;-ms-transform-origin: left center;transform-origin: left center;}#nav-icon4 span:nth-child(3) {bottom: 5px;-webkit-transform-origin: left center;-moz-transform-origin: left center;-o-transform-origin: left center;-ms-transform-origin: left center;transform-origin: left center;}#nav-icon4.open span:nth-child(1) {-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);-o-transform: rotate(45deg);-ms-transform: rotate(45deg);transform: rotate(45deg);top: 5px;left: 6px;}#nav-icon4.open span:nth-child(2) {width: 0%;opacity: 0;}#nav-icon4.open span:nth-child(3) {-webkit-transform: rotate(-45deg);-moz-transform: rotate(-45deg);-o-transform: rotate(-45deg);-ms-transform: rotate(-45deg);transform: rotate(-45deg);top: 33px;left: 6px;}/*  */.exampleMenu {padding: 15px;position: relative;}.exampleMenu__toggle {font-size: 0;outline: none;display: inline-block;width: 40px;height: 40px;background: #333333;-webkit-border-radius: 4px;-moz-border-radius: 4px;border-radius: 4px;}.exampleMenu__menu {padding: 0;margin: 0;width: 100%;overflow: hidden;-webkit-box-pack: justify;-webkit-justify-content: space-between;-moz-box-pack: justify;-ms-flex-pack: justify;justify-content: space-between;-webkit-box-orient: vertical;-webkit-box-direction: normal;-webkit-flex-direction: column;-moz-box-orient: vertical;-moz-box-direction: normal;-ms-flex-direction: column;flex-direction: column;display: none;}.exampleMenu__item {list-style: none;}.exampleMenu__link {text-align: center;display: block;text-decoration: none;padding-top: 15px;position: relative;padding-left: 20px;letter-spacing: 0.5px;padding-right: 20px;padding-bottom: 17px;background-color: #0091ea;color: #fff;text-transform: uppercase;-webkit-transition: 0.24s all;-o-transition: 0.24s all;-moz-transition: 0.24s all;transition: 0.24s all;text-decoration: none;}/* Middle
 -----------------------------------------------------------------------------*/.content {padding: 0 0 320px;}.exampleTable__menuItem {color: #8193a1;text-transform: uppercase;font-family: 'PTSansBold';}.exampleTable__menuItem--relative {position: relative;top: -5px;}.exampleTable__contentItem {font-family: "PTSansRegular";font-size: 13px;letter-spacing: -0.3px;}.exampleTableContentItem__change {letter-spacing: -0.6px;}.exampleTableContentItem__name {font-size: 16px;display: block;text-decoration: none;color: #44a4ee;letter-spacing: 0;position: relative;top: -2px;}.st-key {text-align: left;font-size: 12px;width: 30%;line-height: 14px;}.st-val {width: 60%;padding-bottom: 18px;}/* Footer
------------------------------------------------------------------------------*/.footer {margin: -320px auto 0;min-width: 280px;min-height: 320px;position: relative;background-color: #191919;font-family: "OpenSansRegular";padding-top: 50px;}@media screen and (min-width: 768px) {.exampleMenu__toggle {display: none;}.exampleMenu__menu {-webkit-box-orient: horizontal;-webkit-box-direction: normal;-webkit-flex-direction: row;-moz-box-orient: horizontal;-moz-box-direction: normal;-ms-flex-direction: row;flex-direction: row;display: -webkit-box;display: -webkit-flex;display: -moz-box;display: -ms-flexbox;display: flex;}.exampleMenu__item {width: 20%;}}
+-----------------------------------------------------------------------------*/.footer {margin: -320px auto 0;min-width: 280px;min-height: 320px;position: relative;background-color: #191919;font-family: "OpenSansRegular";padding-top: 50px;}@media screen and (min-width: 768px) {.exampleMenu__toggle {display: none;}.exampleMenu__menu {-webkit-box-orient: horizontal;-webkit-box-direction: normal;-webkit-flex-direction: row;-moz-box-orient: horizontal;-moz-box-direction: normal;-ms-flex-direction: row;flex-direction: row;display: -webkit-box !important;display: -webkit-flex !important;display: -moz-box !important;display: -ms-flexbox !important;display: flex !important;}.exampleMenu__item {width: 20%;}.exampleTable__th {text-align: left;}.exampleTable__menuItem {color: #8193a1;text-transform: uppercase;font-family: 'PTSansBold';}.exampleTable__menuItem--relative {position: static;}.exampleTableContentItem__name {position: static;}}
