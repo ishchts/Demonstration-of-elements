@@ -135,15 +135,7 @@ $('.js-breadcrumbs__list').jScrollPane({
 	animateDuration: 100,
 	showArrows: false
 });
-$('.js-search__list').jScrollPane({
-	contentWidth: '0px',
-	verticalDragMinHeight : 12,
-	verticalDragMaxHeight: 12,
-	mouseWheelSpeed: 50,
-	animateScroll: true,
-	animateDuration: 100,
-	showArrows: false
-});
+
 
 "use strict";
 var blockUiOpen = false;
@@ -233,24 +225,45 @@ $(document).keyup(function(e) {
 	}
 });
 /*CLOSE FORM*/
-
-
-$(document).ready(function(){
-  
+var searchList = function(){
+	$('.js-search__list').jScrollPane({
+		contentWidth: '0px',
+		verticalDragMinHeight : 12,
+		verticalDragMaxHeight: 12,
+		mouseWheelSpeed: 50,
+		animateScroll: true,
+		animateDuration: 100,
+		showArrows: false
+	});	
+}
+$(window).resize(function() {
+   searchList();
+   console.log(1);
+});
+$(document).ready(function(){  
   $(".js-search").click(function(){
   	$(this).closest('.formSearch__group').find('.containerS, .inputS').toggleClass("active");
   	var $this = $(this);
   	var $thisInput = $(this).closest('.formSearch__group').find('.inputS');
   	var list = $(this).closest('.search').find('.js-search__list');
 
-  	if ($('.containerS').hasClass('active')) {
-  		list.slideDown();
-  	} else{
-  		list.slideUp();
-  	}
-
   });
-  
+});
+
+$(document).on('focus', '.js-formSearch__input', function(){
+	var $this = $(this),
+		$containerS = $this.closest('.containerS');
+	var list = $(this).closest('.search').find('.js-search__list');
+
+	if ($containerS.hasClass('active')) {
+		list.slideDown();
+		setTimeout(function(){
+			searchList();
+		},500);
+	} else{
+	  	list.slideUp();
+	}
+
 });
 /*slider start*/
 if ($('.slider').length > 0 ) {
