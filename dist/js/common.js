@@ -248,13 +248,13 @@ $(window).resize(function() {
 $(document).ready(function(){  
   $(".js-search").click(function(){
 
-  	$(this).closest('.formSearch__group').find('.containerS, .inputS').toggleClass("active");
-  	var $this = $(this);
-  	var $thisInput = $(this).closest('.formSearch__group').find('.inputS');
-  	var list = $(this).closest('.search').find('.js-search__list'),
-  		$closest = $this.closest('.search');
+	$(this).closest('.formSearch__group').find('.containerS, .inputS').toggleClass("active");
+	var $this = $(this);
+	var $thisInput = $(this).closest('.formSearch__group').find('.inputS');
+	var list = $(this).closest('.search').find('.js-search__list'),
+		$closest = $this.closest('.search');
 
-  	$thisInput.focus();
+	$thisInput.focus();
 
 	$closest.find('.js-search__list').slideUp();
   });
@@ -329,9 +329,41 @@ $('.js-gallery-nav').slick({
 /* ajax */
 
 $(document).ready(function(){              
-    $('.js-showMore').click(function(e){      
-    	e.preventDefault();
-        $(this).load('ajax/example.html') // загрузку HTML кода из файла example.html    
+	$('.js-showMore').click(function(e){      
+		e.preventDefault();
 
-    }) 
+		var text = $(this).closest('.news').find('.article__text p').load('ajax/example.html');
+	});
+
+	$(document).on('click','.js-btnSent',function(){
+		$.ajax({
+		    url: '/ajax/exampleForm.html',             // указываем URL и
+		    dataType : "json",                     // тип загружаемых данных
+		    success: function (data, textStatus) { // вешаем свой обработчик на функцию success
+		           console.log(1);
+		        $.each(data, function(i, val) {    // обрабатываем полученные данные
+		        });
+		    },
+		    beforeSend: function(){
+		    	console.log(2);
+		    },
+		    complete: function(){
+		    	console.log( ' complete ' )
+		    }
+		});		
+	})
+
+
+	// $.ajax({
+	// 	type: 'get',
+	// 	success:function (data) {
+	// 		var $data = $(data); 
+
+	// 		$('#stocks-block-ajax').append($data.find('#stocks-block-ajax .preview-stock-block').hide().show('slow'));
+	// 		$('#navigation-ajax-block').replaceWith($data.find('#navigation-ajax-block'));
+	// 		$('#show-next-block').show();
+	// 	}
+	// });
 }); 
+
+

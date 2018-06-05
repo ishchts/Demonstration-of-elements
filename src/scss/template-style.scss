@@ -820,7 +820,38 @@ a {
 		}
 	}
 }
+.tabs{
+	color: #000;
+	&__menu{
+		float: left;
+	}
+	&__list{
+		color: #000;
+	}
+	&__item{
+		display: inline-block;
+		float: left;
+		border-right: 1px solid #b61a3e;
+		+ .tabs__item{
+			
+		}
+	}
+	&__link{
+		color: #fff;
+		background-color: #D51E49;
+		padding: 15px 40px;
+		display: block;
+		font-size: 16px;
 
+		&:hover{
+			color: #fff;
+			opacity: 0.8;
+		}
+	}
+	&__span{
+		color: #000;
+	}
+}
 
 /*  */
 /* Footer
