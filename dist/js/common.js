@@ -25,7 +25,7 @@ $('.js-responsive-example-table').cardtable();
 
 $('.js-navToggle').click(function(){
 	$(this).toggleClass('open');
-	$(this).closest('.exampleMenu').find('.exampleMenu__menu').slideToggle();
+	$(this).closest('.exampleMenu').find('.exampleMenu__menu').fadeToggle();
 });
 /*TABS*/
 $(document).on('click','.js-mobile-tab-link', function(e) {
@@ -152,7 +152,9 @@ $.fn.center = function () {
 
 $(document).on('click', '.js-show-popup', function(e){
 	e.preventDefault();
-	var $form = $($(this).attr('href'));
+	var $this = $(this),
+		$form = $('#' + $this.attr('data-id')),
+		$data = $(this).attr('data-id');
 
 	$.blockUI({ 
 		message: $form,
@@ -184,7 +186,7 @@ $(document).on('click', '.js-show-popup', function(e){
 			textAlign: 'left',
 		},
 			overlayCSS: {
-				backgroundColor: 'rgba(36,27,73,0.9)',
+				backgroundColor: 'rgba(0,0,0,0.9)',
 				'cursor': 'default'
 		},
 		focusInput: false
@@ -233,38 +235,40 @@ var searchList = function(){
 		mouseWheelSpeed: 50,
 		animateScroll: true,
 		animateDuration: 100,
-		showArrows: false
+		showArrows: false,
+		verticalDragMinHeight: 80,
+		verticalDragMaxHeight: 80,
+		horizontalDragMinWidth: 80,
+		horizontalDragMaxWidth: 80
 	});	
 }
 $(window).resize(function() {
    searchList();
-   console.log(1);
 });
 $(document).ready(function(){  
   $(".js-search").click(function(){
+
   	$(this).closest('.formSearch__group').find('.containerS, .inputS').toggleClass("active");
   	var $this = $(this);
   	var $thisInput = $(this).closest('.formSearch__group').find('.inputS');
-  	var list = $(this).closest('.search').find('.js-search__list');
+  	var list = $(this).closest('.search').find('.js-search__list'),
+  		$closest = $this.closest('.search');
 
+  	$thisInput.focus();
+
+	$closest.find('.js-search__list').slideUp();
   });
 });
-
-$(document).on('focus', '.js-formSearch__input', function(){
+$(document).on('keypress','.js-formSearch__input',function(){
 	var $this = $(this),
-		$containerS = $this.closest('.containerS');
-	var list = $(this).closest('.search').find('.js-search__list');
+		$closest = $this.closest('.search');
 
-	if ($containerS.hasClass('active')) {
-		list.slideDown();
-		setTimeout(function(){
+		$closest.find('.js-search__list').slideDown(function(){
 			searchList();
-		},500);
-	} else{
-	  	list.slideUp();
-	}
+		});
 
 });
+
 /*slider start*/
 if ($('.slider').length > 0 ) {
 	$('.slider').each( function (i, item) {
@@ -321,3 +325,13 @@ $('.js-gallery-nav').slick({
 	infinite: false,
 	variableWidth: true,
 });
+
+/* ajax */
+
+$(document).ready(function(){              
+    $('.js-showMore').click(function(e){      
+    	e.preventDefault();
+        $(this).load('ajax/example.html') // загрузку HTML кода из файла example.html    
+
+    }) 
+}); 

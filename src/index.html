@@ -42,7 +42,8 @@
 						</li>
 					</ul>
 					<div class="userBlock">
-						<a href="#examplePopUp" class="userBlock__link js-show-popup" >обратная связь</a>
+						<a href="#" class="hidden-xs userBlock__link js-show-popup" data-id="formLoginBlock" >вход</a>
+						<a href="#" class="userBlock__link js-show-popup" data-id="formFeedBackBlock" >обратная связь</a>
 					</div>
 				</nav>
 			</div>
@@ -463,6 +464,21 @@
 				</div>
 			</div>
 		</div>
+		<div class="news">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-xs-12 news__list">
+						<div class="article">
+							<h2 class="article__title">Lorem ipsum dolor.</h2>
+							<div class="article__text">
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem ad fugiat, dignissimos. Perferendis facere praesentium aliquid delectus eligendi esse quasi cum dignissimos consectetur maxime similique unde numquam accusamus voluptates ad id repudiandae, debitis molestias excepturi, dolorum autem quisquam maiores voluptas. Qui voluptas voluptatem libero quisquam, mollitia ratione saepe rerum impedit nemo debitis. Voluptatem impedit sunt cumque delectus ea eveniet quam aperiam rerum, magni odit unde fuga, dolor incidunt doloremque, cupiditate omnis beatae amet quae, adipisci reprehenderit eum! Eum labore, vitae earum quam odio quibusdam harum dolorum sequi officia natus officiis, voluptates velit alias maxime nemo adipisci et quia voluptatibus! Accusamus debitis perspiciatis sit. Porro fugit sed rerum, minima ratione neque.
+							</div>
+							<a href="#" class="btn btn--showMore js-showMore">показать еще</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</main><!-- .content -->
 
 </div><!-- .wrapper -->
@@ -475,13 +491,13 @@
 	</div>
 <!--  -->
 
-<div id="examplePopUp" class="popUpForm hidden-block">
-	<div class="popUpForm__block">
-		<a href="#" class="popUpForm__close js-close-form"></a>
+<div id="formFeedBackBlock" class="popUpForm hidden-block">
+	<div class="popUpForm__block">		
 		<div class="container-fluid">
 			<div class="row">
 				<div class="popUpForm__container">
-					<form action="">
+					<form action="#" class="formPopUp formFeedBack">
+						<a href="#" class="popUpForm__close js-close-form"></a>
 						<span class="popUpForm__title">Получить консультацию</span>
 						<div class="formField">
 							<input
@@ -517,6 +533,38 @@
 		</div>
 	</div>
 </div>
+<div id="formLoginBlock" class="popUpForm hidden-block">
+	<div class="popUpForm__block">		
+		<div class="container-fluid">
+			<div class="row">
+				<div class="popUpForm__container">
+					<form action="#" class="formPopUp formLogin">
+						<a href="#" class="popUpForm__close js-close-form"></a>
+						<span class="popUpForm__title">Вход на сайт</span>
+						<div class="formField">
+							<input
+								type="text"
+								name="text-email"
+								placeholder="Email" 
+							/>
+						</div>
+						<div class="formField">
+							<input
+								type="text"
+								name="text-email"
+								placeholder="Password" 
+							/>
+						</div>
+						<div class="popUpForm__field formField">
+							<button class="button button__color">Отправить</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
 
 <!--  -->
 </footer><!-- .footer -->
