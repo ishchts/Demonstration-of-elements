@@ -11,6 +11,7 @@
 	<link href="css/fontsElement.css" rel="stylesheet">
 	<link href="css/pop_up.css" rel="stylesheet">
 	<link href="css/template-style.css" rel="stylesheet">
+	<link href="css/tabstyle.css" rel="stylesheet">
 </head>
 
 <body>
@@ -484,80 +485,111 @@
 		<div class="tabsBlock">
 			<div class="container-fluid">
 				<div class="row">
-					<div class="col-xs-12 tabs">
-						<div class="tabs__menu">
-							<ul class="tabs__list">
-								<li class="tabs__item">
-									<a href="#" class="tabs__link">
-										<span class="tabs__text">
-											ONE
+					<div class="bookmarks js-tabsblock">
+						<div class="bookmarks__title">
+							<h2>Пример Табов</h2>
+						</div>
+						<div class="bookmarks__choose">
+							<span class="bookmarks__pick">Выбрать таб:</span>
+							<span class="bookmarks__mobileSelect js-mobile-tab-link">Таб 1</span>
+							<div class="bookmarks__tabs js-mobiletabs">
+							<a href="javascript:void(0);" data-href="elem1" class="js-tab-link bookmarks__tab -active">Таб 1</a>
+							<a href="javascript:void(0);" data-href="elem2" class="js-tab-link bookmarks__tab">Таб 2</a>
+							<a href="javascript:void(0);" data-href="elem3" class="js-tab-link bookmarks__tab">Таб 3</a>
+							<a href="javascript:void(0);" data-href="elem4" class="js-tab-link bookmarks__tab">Таб 4</a>
+							<a href="javascript:void(0);" data-href="elem5" class="js-tab-link bookmarks__tab">Таб 5</a>
+							</div>
+						</div>
+						<div class="bookmarks__tabblock">
+							<div class="bookmarks__item js-tab__elem1 js-tab">
+								<h2>Первый таб</h2>
+								<p>
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi dignissimos necessitatibus ullam deleniti facere dolore aliquid fugiat autem sunt possimus, est amet culpa eum aspernatur harum, quidem dolores. Dolorem, voluptate!
+								</p>
+							</div>
+							<div class="bookmarks__item js-tab__elem2 hidden-block js-tab">
+								<h2>Второй таб</h2>
+								<p>
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi dignissimos necessitatibus ullam deleniti facere dolore aliquid fugiat autem sunt possimus, est amet culpa eum aspernatur harum, quidem dolores. Dolorem, voluptate!
+								</p>
+							</div>
+							<div class="bookmarks__item js-tab__elem3 hidden-block js-tab">
+								<h2>Третий таб</h2>
+								<p>
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi dignissimos necessitatibus ullam deleniti facere dolore aliquid fugiat autem sunt possimus, est amet culpa eum aspernatur harum, quidem dolores. Dolorem, voluptate!
+								</p>
+							</div>
+							<div class="bookmarks__item js-tab__elem4 hidden-block js-tab">
+								<h2>Четвертый таб</h2>
+								<p>
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi dignissimos necessitatibus ullam deleniti facere dolore aliquid fugiat autem sunt possimus, est amet culpa eum aspernatur harum, quidem dolores. Dolorem, voluptate!
+								</p>
+							</div>
+							<div class="bookmarks__item js-tab__elem5 hidden-block js-tab">
+								<h2>Пятый таб</h2>
+								<p>
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi dignissimos necessitatibus ullam deleniti facere dolore aliquid fugiat autem sunt possimus, est amet culpa eum aspernatur harum, quidem dolores. Dolorem, voluptate!
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>		
+		<div class="popUpTips">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-xs-12 popUpTips__list">
+						<div class="col-xs-12 col-sm-3 popUpTips__item">
+							<span class="tooltip tooltip--effect-1">
+								<span class="tooltip__item">
+									Lorem ipsum dolor.
+								</span>
+								<span class="tooltip__hint tooltipHint">
+									<span class="tooltipHint__text">
+										Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi distinctio accusamus fugit minima optio! 								
+									</span>
+								</span>
+							</span>
+						</div>
+						<div class="col-xs-12 col-sm-3 popUpTips__item">
+							<span class="tooltip tooltip--effect-2">
+								<span class="tooltip__item">
+									Lorem ipsum dolor.
+								</span>
+								<span class="tooltip__hint tooltipHint">
+									<span class="tooltipHint__text">
+										Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi distinctio accusamus fugit minima optio! 								
+									</span>
+								</span>
+							</span>
+						</div>
+						<div class="col-xs-12 col-sm-3 popUpTips__item">
+							<span class="tooltip tooltip--effect-3">
+								<span class="tooltip__item" data-tooltip="Lorem ipsum dolor sit amet.">
+									Lorem ipsum dolor.
+								</span>
+								<span class="tooltip__hint tooltipHint">
+									<span class="tooltipHint__text">
+										Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi distinctio accusamus fugit minima optio! 								
+									</span>
+								</span>
+							</span>
+						</div>
+						<div class="col-xs-12 col-sm-3 popUpTips__item">
+							<span class="tooltip tooltip--effect-4">
+								<span class="tooltip" >
+									<ins>Lorem ipsum dolor.</ins>
+									<span class="tooltip-content">
+										<span class="tooltip-text">
+											<span class="tooltip-inner">
+												Howdy, Ben!<br> 
+												There are 13 unread messages in your inbox.
+											</span>
 										</span>
-									</a>
-								</li>
-								<li class="tabs__item">
-									<a href="#" class="tabs__link">
-										<span class="tabs__text">
-											TWO
-										</span>
-									</a>
-								</li>
-								<li class="tabs__item">
-									<a href="#" class="tabs__link">
-										<span class="tabs__text">
-											THREE
-										</span>
-									</a>
-								</li>
-								<li class="tabs__item">
-									<a href="#" class="tabs__link">
-										<span class="tabs__text">
-											FOUR
-										</span>
-									</a>
-								</li>
-								<li class="tabs__item">
-									<a href="#" class="tabs__link">
-										<span class="tabs__text">
-											FIVE
-										</span>
-									</a>
-								</li>
-								<li class="tabs__item">
-									<a href="#" class="tabs__link">
-										<span class="tabs__text">
-											SIX
-										</span>
-									</a>
-								</li>
-								<li class="tabs__item">
-									<a href="#" class="tabs__link">
-										<span class="tabs__text">
-											SEVEN
-										</span>
-									</a>
-								</li>
-								<li class="tabs__item">
-									<a href="#" class="tabs__link">
-										<span class="tabs__text">
-											EIGHTNI
-										</span>
-									</a>
-								</li>
-								<li class="tabs__item">
-									<a href="#" class="tabs__link">
-										<span class="tabs__text">
-											NINE
-										</span>
-									</a>
-								</li>
-								<li class="tabs__item">
-									<a href="#" class="tabs__link">
-										<span class="tabs__text">
-											TEN
-										</span>
-									</a>
-								</li>
-							</ul>
+									</span>
+								</span>
+							</span>
 						</div>
 					</div>
 				</div>
