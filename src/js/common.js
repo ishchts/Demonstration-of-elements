@@ -367,3 +367,87 @@ $(document).ready(function(){
 }); 
 
 
+// функция изменение количества товаров
+
+function changeQuantity($link, value){
+
+if ($link.length <= 0){
+
+return;
+
+}
+
+var $input = $link.parent().find('input'),
+
+count = parseInt($input.val()) + value;
+
+count = count < 1 ? 1 : count;
+
+$input.val(count);
+
+if (isNaN($input.val())){
+
+$input.val(1)
+
+}
+
+}
+
+$(document).on('click','.js-cardQuantity__minus', function(event){
+
+event.preventDefault();
+
+changeQuantity($(this), -1);
+
+});
+
+$(document).on('click','.js-cardQuantity__plus', function(event) {
+
+event.preventDefault();
+
+changeQuantity($(this), 1);
+
+});
+
+$(document).on('keydown','.js-cardQuantity__input',function(e){
+
+var key = e.charCode || e.keyCode || 0;
+
+return (
+
+key == 8 ||
+
+key == 9 ||
+
+key == 46 ||
+
+(key >= 37 && key <= 40) ||
+
+(key >= 48 && key <= 57) ||
+
+(key >= 96 && key <= 105));
+
+});
+
+$(document).on('change','.js-cardQuantity__input', function(event){
+changeQuantity($(this), 0);
+});
+
+$(document).on('click','.js-card__close',function(e){
+	e.preventDefault();
+	$(this).closest('.card').fadeOut();
+});
+
+$(document).on('click','.js-catalog-view',function(e){
+	e.preventDefault();
+	var $this = $(this),
+		thisData = $this.data('id'),
+		$catalog = $('.js-catalog-list'),
+		catalogData = $catalog.data('view');
+
+	$('.js-catalog-view').removeClass('current');	
+	$this.addClass('current');
+	
+	$catalog.attr('data-view', thisData);
+
+});
