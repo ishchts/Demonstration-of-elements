@@ -1669,6 +1669,76 @@ a {
 
 	}
 }
+.formTextArea {
+	margin-bottom: 30px;
+}
+.textAreaField {
+	height: 200px;
+	width: 300px;
+	&__textarea {
+		resize : none;
+		height: 100%;
+		width: 100%;
+		border: 1px solid #333333;
+		font-size: 16px;
+		padding: 10px;
+	}
+}
+.buttonsWrapper {
+	width: 400px;
+
+}
+.buttonsFiel {
+	&__btn {
+		display: block;
+		margin-bottom: 20px;
+	}
+	@at-root .button {
+		&--blue {
+			position: relative;
+			background-color: #55acee;
+			border: none;
+			padding: 12px;
+			width: 200px;
+			font-size: 16px;
+			color: #fff;
+			text-align: center;
+			-webkit-transition-duration: 0.4s; /* Safari */
+			transition-duration: 0.4s;
+			text-decoration: none;
+			overflow: hidden;
+			&:hover{
+				background:#fff;
+				box-shadow:0px 2px 10px 5px #97B1BF;
+				color:#000;
+			}
+			&:active{
+				transform: translate(0px,5px);
+				-webkit-transform: translate(0px,5px);
+				border-bottom: 1px solid;
+			}
+			&::after{
+				content: "";
+				background: #55acee;
+				display: block;
+				position: absolute;
+				padding-top: 300%;
+				padding-left: 350%;
+				margin-left: -20px !important;
+				margin-top: -120%;
+				opacity: 0;
+				transition: all 0.8s
+			}
+			&:active:after {
+				padding: 0;
+				margin: 0;
+				opacity: 1;
+				transition: 0s
+			}
+		}
+
+	}
+}
 /*  */
 /* Footer
 -----------------------------------------------------------------------------*/

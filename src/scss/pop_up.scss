@@ -138,48 +138,7 @@
 	transition: all 0.25s;
 	transition: all 0.25s;
 }
-.button {
-	position: relative;
-	background-color: #55acee;
-	border: none;
-	padding: 12px;
-	width: 200px;
-	font-size: 16px;
-	color: #fff;
-	text-align: center;
-	-webkit-transition-duration: 0.4s; /* Safari */
-	transition-duration: 0.4s;
-	text-decoration: none;
-	overflow: hidden;
-	&:hover{
-		background:#fff;
-		box-shadow:0px 2px 10px 5px #97B1BF;
-		color:#000;
-	}
-	&:active{
-		transform: translate(0px,5px);
-		-webkit-transform: translate(0px,5px);
-		border-bottom: 1px solid;
-	}
-	&::after{
-		content: "";
-		background: #55acee;
-		display: block;
-		position: absolute;
-		padding-top: 300%;
-		padding-left: 350%;
-		margin-left: -20px !important;
-		margin-top: -120%;
-		opacity: 0;
-		transition: all 0.8s
-	}
-	&:active:after {
-		padding: 0;
-		margin: 0;
-		opacity: 1;
-		transition: 0s
-	}
-}
+
 @media screen and (min-width: 768px) {
 	.popUpForm__close {
 	}
