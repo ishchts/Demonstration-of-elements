@@ -135,8 +135,11 @@ $('.js-breadcrumbs__list').jScrollPane({
 	animateDuration: 100,
 	showArrows: false
 });
-
-
+$(window).on('resize',function(){
+	var $pane = $('.js-breadcrumbs__list');
+	var api = $pane.data('jsp');
+	api.reinitialise();
+});
 "use strict";
 var blockUiOpen = false;
 
@@ -451,3 +454,14 @@ $(document).on('click','.js-catalog-view',function(e){
 	$catalog.attr('data-view', thisData);
 
 });
+
+//input upload 
+$(document).on('change','.js-uploadFile__input',function(){
+	var $thisVal = $(this).val();
+	$(this).next().text($thisVal);
+});
+
+// отмена выделения 
+$(document).on('onselectstart onmousedown','*',function(){
+	return false;
+})

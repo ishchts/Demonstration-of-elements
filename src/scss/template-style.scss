@@ -1422,7 +1422,7 @@ a {
 		color: #333333;
 	}
 }
-ul {
+.unnumbered ul {
 	margin-bottom: 20px;
 	list-style-type: none;
 	li {
@@ -1476,49 +1476,44 @@ ul {
 		}
 	}
 }
-ol {
+.numbered ol {
 	counter-reset: list1;
-	list-style-type: none;
+	margin-bottom: 20px;
 	li {
-		padding-left: 20px;
 		position: relative;
 		margin-top: 3px;
 		margin-bottom: 3px;
-		&::after {
-			content: counter(list1);
+		&::before {
+			content: counter(list1) '.';
 			counter-increment: list1;
-			position: absolute;
-			left: 7px;
-			top: 0;
-			width: 15px;
-			height: 15px;
-			font-size: 14px;
+			font-size: 16px;
 		}
 		a {
-			font-size: 14px;
 			span {
 				color: #333333;
-
+				font-size: 16px;
 			}
 		}
 		ol {
+			margin-bottom: 0;
 			counter-reset: list2;
 			li {
-				&::after {
-					content: counter(list2);
+				padding-left: 30px;
+				&::before {
+					content: counter(list1) '.' counter(list2) '.';
 					counter-increment: list2;
 				}
 				a {
 					span {
+
 					}
 				}
 				ol {
-					counter-reset: qwe3;
+					counter-reset: list3;
 					li {
-						&::after {
-							content: counter(qwe3);
-							counter-increment: qwe3;
-
+						&::before {
+							content: counter(list1) '.' counter(list2) '.' counter(list3) '.';
+							counter-increment: list3; 
 						}
 						a {
 							span {
@@ -1531,7 +1526,149 @@ ol {
 		}
 	}
 }
+.uploadFileWrapper {
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+.uploadFile {
+	width: 250px;
+	&__label {
+		position: relative;
+		cursor: pointer;
+		padding-left: 30px;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		display: block;
+		&::after,&::before {
+			content: "";
+			position: absolute;
+			left: 9px;
+			top: 4px;
+			width: 1px;
+			height: 18px;
+			background-color: #333333;
 
+		}
+		&::after {
+			transform : rotate(90deg);
+		}
+	}
+	&__input {
+		position: absolute;
+		left: -99999px;
+	}
+	&__text {
+		font-size: 14px;
+	}
+}
+.formButtons {
+	margin-bottom: 20px;
+}
+.checkbkox {
+	&__label {
+		position: relative;
+		padding-left: 30px;
+		cursor: pointer;
+		display: block;
+		margin-bottom: 20px;
+	}
+	&__input {
+		position: absolute;
+		left: -9999px;
+	}
+	&__input:checked + .checkbkox__marker::after {
+			top: 0;
+			left: 1px;
+			transform : rotate(-90deg);
+	}
+	&__input[disabled] ~ {
+		span {
+			color: gray;
+			border-color: gray;
+			cursor: not-allowed;
+		} 
+	}
+	&__marker {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 20px;
+		height: 20px;
+		border: 1px solid #333333;
+		border-radius: 5px;
+		overflow: hidden;
+		&::after{
+			content: '\f0fb';
+			font-family: "FontAwesome";
+			font-size: 14px;
+			position: absolute;
+			left: 1px;
+			top: 20px;
+			transform: rotate(90deg);
+			transition: top .3s linear;
+		}
+	}
+	&__text {
+		font-size: 15px;
+	}
+}
+.radioFiel {
+	&__label {
+		display: block;
+		margin-bottom: 20px;
+		position: relative;
+		padding-left: 30px;
+		cursor: pointer;
+		&:hover {
+			
+		}
+	}
+	&__input {
+		position: absolute;
+		left: -9999px;
+
+	}
+	&__input:checked + .radioFiel__marker {
+		&::after {
+			opacity: 1;
+		}
+	}
+	&__input[disabled] ~  {
+		span {
+			cursor: not-allowed;
+			color: gray;
+			border-color: gray;
+		}
+
+	} 
+	&__marker {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 20px;
+		height: 20px;
+		border: 1px solid #333333;
+		border-radius: 50%;
+		&::after {
+			content: "\f15a";
+			font-family: "FontAwesome";
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			text-align: center;
+			margin: auto;
+			opacity: 0;
+			transition : opacity .3s linear;
+
+		}
+
+	}
+	&__text {
+		font-size: 15px;
+
+	}
+}
 /*  */
 /* Footer
 -----------------------------------------------------------------------------*/
