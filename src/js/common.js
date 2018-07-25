@@ -327,6 +327,7 @@ $('.js-gallery-nav').slick({
 	focusOnSelect: true,
 	infinite: false,
 	variableWidth: true,
+	arrows: true,
 });
 
 /* ajax */
